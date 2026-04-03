@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Human vs AI | Wealth Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#f7f9fb",
+                "on-primary-container": "#497cff",
+                "tertiary-container": "#002113",
+                "secondary-fixed-dim": "#bec6e0",
+                "on-background": "#191c1e",
+                "secondary": "#565e74",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "inverse-surface": "#2d3133",
+                "on-tertiary-fixed": "#002113",
+                "tertiary-fixed": "#6ffbbe",
+                "secondary-fixed": "#dae2fd",
+                "on-secondary-fixed": "#131b2e",
+                "surface-container-high": "#e6e8ea",
+                "on-secondary-container": "#5c647a",
+                "outline": "#76777d",
+                "on-secondary-fixed-variant": "#3f465c",
+                "on-primary-fixed": "#00174b",
+                "error-container": "#ffdad6",
+                "on-surface": "#191c1e",
+                "surface-container-low": "#f2f4f6",
+                "surface-tint": "#0053db",
+                "surface-container": "#eceef0",
+                "outline-variant": "#c6c6cd",
+                "on-primary": "#ffffff",
+                "surface-dim": "#d8dadc",
+                "error": "#ba1a1a",
+                "secondary-container": "#dae2fd",
+                "on-secondary": "#ffffff",
+                "on-surface-variant": "#45464d",
+                "surface-container-highest": "#e0e3e5",
+                "inverse-on-surface": "#eff1f3",
+                "primary-fixed-dim": "#b4c5ff",
+                "surface-bright": "#f7f9fb",
+                "on-primary-fixed-variant": "#003ea8",
+                "on-tertiary-fixed-variant": "#005236",
+                "on-tertiary-container": "#009668",
+                "surface-variant": "#e0e3e5",
+                "primary-fixed": "#dbe1ff",
+                "surface": "#f7f9fb",
+                "tertiary": "#000000",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#b4c5ff",
+                "tertiary-fixed-dim": "#4edea3",
+                "primary-container": "#00174b",
+                "primary": "#000000",
+                "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .ai-gradient {
+            background: linear-gradient(135deg, #00174b 0%, #497cff 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Sidebar Navigation -->
+<aside class="flex flex-col fixed left-0 top-0 h-full overflow-y-auto bg-slate-50 dark:bg-slate-900 h-screen w-64 border-r-0 z-50">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-headline">Wealth Intelligence</h1>
+<p class="text-[0.6875rem] uppercase tracking-widest text-slate-500 font-label">Private Office</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-[0.6875rem] uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label text-[0.6875rem] uppercase tracking-widest">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-blue-600 dark:text-blue-400 font-semibold border-r-2 border-blue-600 dark:border-blue-400 bg-slate-200/50 dark:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label text-[0.6875rem] uppercase tracking-widest">Proposal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-[0.6875rem] uppercase tracking-widest">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-8">
+<button class="w-full ai-gradient text-white py-4 rounded-xl font-headline text-sm font-semibold tracking-wide shadow-lg shadow-on-primary-container/20 active:opacity-80 transition-all">
+                Generate Proposal
+            </button>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center h-16 px-8 ml-64 bg-white/60 dark:bg-slate-950/60 backdrop-blur-xl docked full-width top-0 sticky z-40 bg-slate-50 dark:bg-slate-900">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-on-primary-container/20 transition-all" placeholder="Search client portfolios..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="help_outline">help_outline</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface leading-tight">Arthur Sterling</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Senior Partner</p>
+</div>
+<img alt="Advisor Profile" class="w-8 h-8 rounded-full object-cover" data-alt="close-up portrait of a professional wealth advisor in a light gray suit with a focused and friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTCeh8VzLiSeF2gXbYZb5zTj5qZJLE7aN58px8f2MgfXmu4l8--TCgrVafGskr0h41hJ6UhhUzD_TESJTSY7WlNC_ZsReTKtoLkykzKZmuwwJ-NC_oQGH8XWT8WUuW2nNwvWQOEsLtlsoxZnZJ1X12u6-b6roF5tqVa4Q3nZweTVpzmr8TOuzskC0SHj15NnT_7wdHlhahpwfCzGyWQd1IJdfu8-7qqgRMK3Nt-_8K1sk0NGCCtXEDHYqCIGwmutPJujN0ZK3U1Q"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-12 min-h-screen">
+<!-- Header Section -->
+<div class="mb-12">
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.15em]">Proposal Comparison</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.15em] text-on-surface">Client: Alexander Thorne</span>
+</div>
+<h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight mb-4">Investment Strategy Contrast</h2>
+<p class="text-on-surface-variant max-w-2xl font-body leading-relaxed">
+                Compare the conservative rule-based allocation against our proprietary Intelligence AI's predictive dynamic rebalancing model.
+            </p>
+</div>
+<!-- Comparison Bento Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- HUMAN CARD -->
+<div class="col-span-12 lg:col-span-6 flex flex-col">
+<div class="bg-surface-container-lowest rounded-xl p-8 h-full relative overflow-hidden flex flex-col transition-all">
+<div class="flex justify-between items-start mb-10">
+<div>
+<span class="inline-block px-3 py-1 bg-surface-container-high rounded-full font-label text-[0.6rem] uppercase tracking-widest text-on-surface-variant mb-4">Standard Framework</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Human Advisor Model</h3>
+</div>
+<div class="w-12 h-12 bg-surface-container-low rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+</div>
+</div>
+<!-- Allocation Display -->
+<div class="grid grid-cols-2 gap-4 mb-10">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="font-label text-[0.6rem] uppercase tracking-widest text-on-surface-variant mb-1">Equity</p>
+<p class="text-3xl font-headline font-extrabold text-on-surface">50.0%</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="font-label text-[0.6rem] uppercase tracking-widest text-on-surface-variant mb-1">Debt</p>
+<p class="text-3xl font-headline font-extrabold text-on-surface">50.0%</p>
+</div>
+</div>
+<!-- Funds -->
+<div class="space-y-4 mb-10">
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="font-headline font-semibold text-sm">Global Equity Fund A</span>
+</div>
+<span class="text-xs text-on-surface-variant font-body">25% Weight</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="font-headline font-semibold text-sm">Strategic Bond Fund B</span>
+</div>
+<span class="text-xs text-on-surface-variant font-body">25% Weight</span>
+</div>
+</div>
+<!-- Reasoning -->
+<div class="mt-auto">
+<h4 class="font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant mb-3 border-b border-outline-variant/10 pb-2">Reasoning &amp; Risk Framework</h4>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed italic">
+                            "Allocation based on standard 50/50 balanced portfolio rules. Prioritizes capital preservation through traditional diversification metrics and long-term historical performance benchmarks."
+                        </p>
+</div>
+<button class="mt-8 w-full py-4 rounded-xl border border-outline-variant text-on-surface font-headline font-bold text-sm hover:bg-surface-container-low transition-colors">
+                        Select Human Model
+                    </button>
+</div>
+</div>
+<!-- AI CARD -->
+<div class="col-span-12 lg:col-span-6 flex flex-col">
+<div class="ai-gradient rounded-xl p-8 h-full relative overflow-hidden flex flex-col text-white shadow-2xl shadow-on-primary-container/30">
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="flex justify-between items-start mb-10 relative z-10">
+<div>
+<span class="inline-block px-3 py-1 bg-on-primary-container/30 backdrop-blur rounded-full font-label text-[0.6rem] uppercase tracking-widest text-white mb-4">The Sovereign AI</span>
+<h3 class="text-2xl font-headline font-bold">Predictive Intelligence Model</h3>
+</div>
+<div class="w-12 h-12 bg-white/10 backdrop-blur rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-fixed" data-icon="auto_awesome" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<!-- Allocation Display -->
+<div class="grid grid-cols-2 gap-4 mb-10 relative z-10">
+<div class="bg-white/10 backdrop-blur p-6 rounded-xl border border-white/5">
+<p class="font-label text-[0.6rem] uppercase tracking-widest text-blue-200 mb-1">Equity</p>
+<p class="text-3xl font-headline font-extrabold">60.0%</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs text-tertiary-fixed" data-icon="trending_up">trending_up</span>
+<span class="text-[10px] text-tertiary-fixed font-bold">+10% Adj</span>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur p-6 rounded-xl border border-white/5">
+<p class="font-label text-[0.6rem] uppercase tracking-widest text-blue-200 mb-1">Debt</p>
+<p class="text-3xl font-headline font-extrabold">40.0%</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs text-orange-300" data-icon="trending_down">trending_down</span>
+<span class="text-[10px] text-orange-300 font-bold">-10% Adj</span>
+</div>
+</div>
+</div>
+<!-- AI Funds -->
+<div class="space-y-4 mb-10 relative z-10">
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed"></div>
+<span class="font-headline font-semibold text-sm">Tech Multi-Cap Fund X</span>
+</div>
+<span class="text-xs text-blue-100 font-body">35% Weight</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-headline font-semibold text-sm">Dynamic Yield Corp Y</span>
+</div>
+<span class="text-xs text-blue-100 font-body">25% Weight</span>
+</div>
+</div>
+<!-- AI Reasoning -->
+<div class="mt-auto relative z-10">
+<h4 class="font-label text-[0.6875rem] uppercase tracking-widest text-blue-200 mb-3 border-b border-white/10 pb-2 flex justify-between">
+                            AI Sentiment &amp; Trend Analysis
+                            <span class="text-tertiary-fixed font-bold">Risk Score: 4.2/10</span>
+</h4>
+<p class="text-sm font-body text-white leading-relaxed">
+                            "AI identifies bullish sentiment in emerging tech sectors and low-duration debt. Model overweighting equities to capture momentum shift detected in cross-market volatility signals."
+                        </p>
+</div>
+<button class="mt-8 w-full py-4 rounded-xl bg-white text-primary-container font-headline font-bold text-sm hover:bg-blue-50 transition-colors shadow-lg">
+                        Select AI Model
+                    </button>
+</div>
+</div>
+<!-- Detail Analysis Footer -->
+<div class="col-span-12">
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="analytics">analytics</span>
+</div>
+<div>
+<p class="text-sm font-headline font-bold text-on-surface">Deep Comparison Required?</p>
+<p class="text-xs text-on-surface-variant font-body">Analyze back-tested performance of both models against the 2008 &amp; 2020 market events.</p>
+</div>
+</div>
+<button class="px-8 py-3 rounded-xl bg-surface-container-lowest text-on-surface font-headline font-bold text-sm border border-outline-variant/30 hover:shadow-md transition-all flex items-center gap-2">
+                        Compare Detailed Metrics
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- USP Feature Highlight: Bento Component -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-container mb-4" data-icon="speed" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h5 class="font-headline font-bold text-sm mb-2">Real-Time Pivot</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">AI re-weights every 24 hours based on global news sentiment and bond yields.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-container mb-4" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h5 class="font-headline font-bold text-sm mb-2">Cognitive Overlays</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Identifies human bias in traditional portfolios and suggests neutralizing positions.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-container mb-4" data-icon="shield_with_heart" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<h5 class="font-headline font-bold text-sm mb-2">Dynamic Protection</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Automatic tail-risk hedging activated when systemic volatility crosses the 20% threshold.</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

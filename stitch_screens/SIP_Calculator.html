@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIP Calculator - The Sovereign Analyst</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f7f9fb",
+                        "on-primary-container": "#497cff",
+                        "tertiary-container": "#002113",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-background": "#191c1e",
+                        "secondary": "#565e74",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed": "#002113",
+                        "tertiary-fixed": "#6ffbbe",
+                        "secondary-fixed": "#dae2fd",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-container": "#5c647a",
+                        "outline": "#76777d",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#00174b",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-tint": "#0053db",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-tertiary-container": "#009668",
+                        "surface-variant": "#e0e3e5",
+                        "primary-fixed": "#dbe1ff",
+                        "surface": "#f7f9fb",
+                        "tertiary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "primary-container": "#00174b",
+                        "primary": "#000000",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(224, 227, 229, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #00174b 0%, #497cff 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar Component -->
+<aside class="flex flex-col fixed left-0 top-0 h-full overflow-y-auto bg-slate-50 dark:bg-slate-900 h-screen w-64 border-r-0 z-50">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-10 h-10 rounded-xl signature-gradient flex items-center justify-center text-white font-bold">WI</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-headline">Wealth Intelligence</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-label">Private Office</p>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium font-label uppercase tracking-widest text-[0.6875rem]">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-sm font-medium font-label uppercase tracking-widest text-[0.6875rem]">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 font-semibold border-r-2 border-blue-600 dark:border-blue-400 bg-slate-100 dark:bg-slate-800/50 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-sm font-medium font-label uppercase tracking-widest text-[0.6875rem]">Proposal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-medium font-label uppercase tracking-widest text-[0.6875rem]">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full py-4 signature-gradient text-white rounded-xl font-headline font-bold text-sm tracking-wide shadow-lg shadow-blue-500/20 active:opacity-80 transition-all scale-98">
+                Generate Proposal
+            </button>
+</div>
+</aside>
+<!-- TopNavBar Component -->
+<header class="flex justify-between items-center h-16 px-8 ml-64 docked full-width top-0 sticky bg-white/60 dark:bg-slate-950/60 backdrop-blur-xl z-40">
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl w-96 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-label w-full" placeholder="Search wealth strategies..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4 text-slate-500">
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-surface-container">
+<img alt="Advisor Profile" data-alt="professional portrait of a confident wealth advisor in a dark suit against a soft office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmGRO0Ah-9elIi66kfOd26vFUjIiyORct1r4QceWHEZt5NWoO11wJOsE9dGeF04W3U9HYIq_BtcCK3oR_I6xt_vBTprBGaZ-mvkDces28wBGkQpMl1pB5y1yA9o8UnT5kbvDdQlqprwyaDNsfTsFUKulgVpxjc_nft56FeCkzmde-K28enKYpcv0Hlk8_iI8GKhufSyQMCCuhVUx3oSL3ctjEqVDYRylQnoPsTf1qFX7m5NslQbi4V9gT1R5rn0fNeOvwkTya65f4"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-12 max-w-7xl">
+<!-- Header Section -->
+<header class="mb-12">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-lg text-[10px] font-bold uppercase tracking-widest font-label">Financial Planning</span>
+</div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight">SIP Intelligence Engine</h2>
+<p class="text-on-surface-variant max-w-2xl mt-4 leading-relaxed font-body">Calculate compound growth potential and visualize long-term wealth accumulation for your private equity and mutual fund portfolios.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Input Section (Left Column) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-full shadow-sm">
+<h3 class="font-headline font-bold text-lg mb-8 text-on-surface">Parameters</h3>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between mb-3">
+<label class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline font-label">Monthly Investment (₹)</label>
+<span class="text-on-primary-container font-headline font-bold">25,000</span>
+</div>
+<div class="h-2 bg-surface-container-low rounded-full relative">
+<div class="absolute left-0 top-0 h-full w-[40%] signature-gradient rounded-full"></div>
+<div class="absolute left-[40%] -top-2 w-5 h-5 bg-white border-4 border-on-primary-container rounded-full shadow-md cursor-pointer"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-outline-variant font-label">
+<span>₹5k</span>
+<span>₹500k</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-3">
+<label class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline font-label">Time Period (Years)</label>
+<span class="text-on-primary-container font-headline font-bold">15 Years</span>
+</div>
+<div class="h-2 bg-surface-container-low rounded-full relative">
+<div class="absolute left-0 top-0 h-full w-[60%] signature-gradient rounded-full"></div>
+<div class="absolute left-[60%] -top-2 w-5 h-5 bg-white border-4 border-on-primary-container rounded-full shadow-md cursor-pointer"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-outline-variant font-label">
+<span>1Y</span>
+<span>30Y</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-3">
+<label class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline font-label">Expected Return Rate (%)</label>
+<span class="text-on-primary-container font-headline font-bold">12%</span>
+</div>
+<div class="h-2 bg-surface-container-low rounded-full relative">
+<div class="absolute left-0 top-0 h-full w-[48%] signature-gradient rounded-full"></div>
+<div class="absolute left-[48%] -top-2 w-5 h-5 bg-white border-4 border-on-primary-container rounded-full shadow-md cursor-pointer"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-outline-variant font-label">
+<span>5%</span>
+<span>25%</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-12 py-4 signature-gradient text-white rounded-xl font-headline font-bold text-sm tracking-wide shadow-lg shadow-blue-500/20 active:scale-95 transition-all">
+                        Execute Calculation
+                    </button>
+</div>
+<!-- AI Suggestion Card -->
+<div class="bg-tertiary-container text-tertiary-fixed p-6 rounded-full flex gap-4 items-start relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-on-tertiary-container/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<p class="text-[0.6875rem] font-bold uppercase tracking-widest mb-1 opacity-70 font-label">Sovereign Recommendation</p>
+<p class="text-sm leading-relaxed font-medium">Increase SIP by <span class="text-white font-bold">10% annually</span> to reach your goal of ₹5 Cr 3 years earlier.</p>
+</div>
+</div>
+</div>
+<!-- Results Section (Right Column) -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Main KPI Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-full transition-all hover:shadow-xl hover:shadow-slate-200/40">
+<p class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline mb-3 font-label">Invested Amount</p>
+<h4 class="text-3xl font-extrabold font-headline text-on-surface">₹45,00,000</h4>
+<div class="mt-4 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-[10px] font-bold rounded">Fixed</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-full transition-all hover:shadow-xl hover:shadow-slate-200/40">
+<p class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline mb-3 font-label">Wealth Gained</p>
+<h4 class="text-3xl font-extrabold font-headline text-on-tertiary-container">₹81,14,354</h4>
+<div class="mt-4 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded">+180.3%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-full signature-gradient transition-all shadow-xl shadow-blue-500/20">
+<p class="text-[0.6875rem] font-bold uppercase tracking-widest text-white/70 mb-3 font-label">Maturity Value</p>
+<h4 class="text-3xl font-extrabold font-headline text-white">₹1,26,14,354</h4>
+<div class="mt-4 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-white/20 text-white text-[10px] font-bold rounded">Projection</span>
+</div>
+</div>
+</div>
+<!-- Visual Chart Section -->
+<div class="bg-surface-container-lowest p-10 rounded-full shadow-sm relative overflow-hidden group">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface">Growth Projection</h3>
+<p class="text-on-surface-variant text-sm font-body mt-1">15-year wealth accumulation timeline</p>
+</div>
+<div class="flex gap-6">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-surface-container"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-outline font-label">Principal</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full signature-gradient"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-outline font-label">Estimated Returns</span>
+</div>
+</div>
+</div>
+<!-- Asymmetric Chart Visualization -->
+<div class="relative h-[320px] flex items-end gap-1">
+<!-- Year 1 -->
+<div class="flex-1 flex flex-col justify-end gap-0.5 group/bar h-full">
+<div class="w-full bg-on-primary-container/10 rounded-t-sm h-[5%] transition-all group-hover/bar:h-[6%]"></div>
+<div class="w-full bg-surface-container rounded-b-sm h-[10%]"></div>
+<span class="text-[8px] font-bold mt-2 text-center text-outline-variant">Y1</span>
+</div>
+<!-- Year 5 -->
+<div class="flex-1 flex flex-col justify-end gap-0.5 group/bar h-full">
+<div class="w-full bg-on-primary-container/20 rounded-t-sm h-[15%] transition-all group-hover/bar:h-[18%]"></div>
+<div class="w-full bg-surface-container rounded-b-sm h-[20%]"></div>
+<span class="text-[8px] font-bold mt-2 text-center text-outline-variant">Y5</span>
+</div>
+<!-- Year 10 -->
+<div class="flex-1 flex flex-col justify-end gap-0.5 group/bar h-full">
+<div class="w-full bg-on-primary-container/40 rounded-t-sm h-[35%] transition-all group-hover/bar:h-[38%]"></div>
+<div class="w-full bg-surface-container rounded-b-sm h-[30%]"></div>
+<span class="text-[8px] font-bold mt-2 text-center text-outline-variant">Y10</span>
+</div>
+<!-- Year 15 -->
+<div class="flex-1 flex flex-col justify-end gap-0.5 group/bar h-full">
+<div class="w-full signature-gradient rounded-t-sm h-[60%] transition-all group-hover/bar:h-[63%] shadow-lg shadow-blue-500/10"></div>
+<div class="w-full bg-surface-container rounded-b-sm h-[35%]"></div>
+<span class="text-[8px] font-bold mt-2 text-center text-on-surface">Y15</span>
+</div>
+<!-- Floating Glass Metric -->
+<div class="absolute right-12 top-0 glass-panel p-6 rounded-xl border border-white/20 shadow-2xl">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="trending_up">trending_up</span>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant font-label">Power of Compounding</span>
+</div>
+<p class="text-2xl font-extrabold font-headline text-on-surface">₹1.26 Cr</p>
+<p class="text-[10px] text-on-tertiary-container font-bold mt-1">Growth: +280% vs Savings</p>
+</div>
+</div>
+</div>
+<!-- Secondary Data Grid -->
+<div class="grid grid-cols-2 gap-8">
+<div class="bg-surface-container-low p-6 rounded-full border border-outline-variant/10">
+<h5 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline mb-4 font-label">Historical context</h5>
+<p class="text-sm font-medium text-on-surface-variant leading-relaxed">Based on Nifty 50 average returns (12.4%) over the last 15 years. Results may vary based on specific fund selection.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-full border border-outline-variant/10 flex justify-between items-center">
+<div>
+<h5 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline mb-1 font-label">Risk Profile</h5>
+<p class="text-lg font-bold font-headline text-on-surface">Moderate Growth</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-on-primary-container/20 flex items-center justify-center">
+<div class="w-8 h-8 rounded-full border-4 border-on-primary-container border-t-transparent animate-spin-slow"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Action (Contextual to Wealth Analysis) -->
+<button class="fixed bottom-8 right-8 signature-gradient w-16 h-16 rounded-full flex items-center justify-center text-white shadow-2xl shadow-blue-500/40 hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</body></html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wealth Intelligence | Advisor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#f7f9fb",
+                      "on-primary-container": "#497cff",
+                      "tertiary-container": "#002113",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "on-background": "#191c1e",
+                      "secondary": "#565e74",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2d3133",
+                      "on-tertiary-fixed": "#002113",
+                      "tertiary-fixed": "#6ffbbe",
+                      "secondary-fixed": "#dae2fd",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-container-high": "#e6e8ea",
+                      "on-secondary-container": "#5c647a",
+                      "outline": "#76777d",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-primary-fixed": "#00174b",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#191c1e",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-tint": "#0053db",
+                      "surface-container": "#eceef0",
+                      "outline-variant": "#c6c6cd",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#dae2fd",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#45464d",
+                      "surface-container-highest": "#e0e3e5",
+                      "inverse-on-surface": "#eff1f3",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-bright": "#f7f9fb",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-tertiary-container": "#009668",
+                      "surface-variant": "#e0e3e5",
+                      "primary-fixed": "#dbe1ff",
+                      "surface": "#f7f9fb",
+                      "tertiary": "#000000",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "primary-container": "#00174b",
+                      "primary": "#000000",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-wealth-gradient {
+            background: linear-gradient(135deg, #00174b 0%, #003ea8 100%);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- SideNavBar -->
+<aside class="flex flex-col fixed left-0 top-0 h-full overflow-y-auto bg-slate-50 dark:bg-slate-900 h-screen w-64 border-r-0 z-50">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-10">
+<img alt="Wealth Advisor Firm Logo" class="w-8 h-8 rounded-lg shadow-sm" data-alt="minimalist professional logo for a wealth intelligence firm with geometric interlocking lines in deep navy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHnlTFg8K9BjxkwwXH0T_zaH3Woo2EwePjPG1fCZgPzUsHBIGwj7jnwFti4cjbdTqwlfiI41a5yPY-KVPtHZRYjLQCiaIcw1TO2bFYRGnqWPZJQU0MxPYZFNvnyK2FmGMuJrUAcHf6MHQzFtbbavWMzQGAZIPL50OB4zQW7S_QTfq-bT6whVTqu4rWMolMgNWrknFvbI8W8qFdJ-HRU-aP7pq4bsABm6TGz36-aEbgGo_50DqtN6UlwIO3_JoC4KNRc2b5JX3wpXE"/>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-headline">Wealth Intelligence</h1>
+<p class="text-[0.625rem] uppercase tracking-widest text-slate-500 font-label">Private Office</p>
+</div>
+</div>
+<nav class="space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 font-semibold border-r-2 border-blue-600 dark:border-blue-400 bg-slate-100 dark:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label text-[0.875rem]">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+<span class="font-label text-[0.875rem]">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+<span class="font-label text-[0.875rem]">Proposal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label text-[0.875rem]">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full bg-wealth-gradient text-white font-label text-sm py-3 px-4 rounded-xl shadow-lg hover:opacity-90 active:scale-98 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+                Generate Proposal
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-8 sticky top-0 bg-white/60 dark:bg-slate-950/60 backdrop-blur-xl z-40 transition-all">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-on-primary-container/20 transition-all font-body" placeholder="Search clients, portfolios, or reports..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-8">
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-slate-900 transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-500 hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-semibold text-slate-900 font-headline leading-tight">Alexander Sterling</p>
+<p class="text-[0.625rem] text-slate-500 uppercase tracking-wider font-label">Senior Advisor</p>
+</div>
+<img alt="Advisor Profile Picture" class="w-10 h-10 rounded-full border-2 border-surface-container" data-alt="close-up portrait of a professional wealth advisor with a friendly confident expression in high-key soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2apxGQ5bguwxIT2dy-lvBFR9GmRn_0xDG557dOJYBCmpL2djL4isEou12mkAM0GfmMWRSUJo25NpRF3OaZLZeqYMhmwbx5Rh1XZVXCfy4reOhfaVq6uOR7QUNM3_G5RGqv6NwqxhpNsM7vE7B3V3U7zcA82QDUNsbiqCjdX8tgbBTlZR4jzcR7AQsDpiRmE6_hZ0Q_rCIQdTo_12cJ3VeiGQeXIHTP1EbJ_LzulDULOqFz39Ygf13YxzlPnv2dRymfO0PL71B2-E"/>
+</div>
+</div>
+</header>
+<main class="p-8 space-y-8">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-bold font-headline tracking-tight text-on-background">Portfolio Overview</h2>
+<p class="text-on-surface-variant mt-1 font-body">Good morning, Alexander. Here is your practice intelligence.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-highest text-on-surface px-5 py-2.5 rounded-xl font-label text-sm font-medium flex items-center gap-2 hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+                        Add Client
+                    </button>
+<button class="bg-wealth-gradient text-white px-5 py-2.5 rounded-xl font-label text-sm font-medium flex items-center gap-2 shadow-sm hover:opacity-95 transition-opacity">
+<span class="material-symbols-outlined text-lg" data-icon="bolt">bolt</span>
+                        Quick Analysis
+                    </button>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
+<div class="relative z-10">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest font-label text-[0.6875rem] font-semibold mb-4">Total Clients</p>
+<div class="flex items-end justify-between">
+<h3 class="text-5xl font-extrabold font-headline text-slate-900">54</h3>
+<div class="flex items-center text-on-tertiary-container bg-tertiary-container/10 px-2 py-1 rounded text-xs font-semibold">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="trending_up">trending_up</span>
+                                +4.2%
+                            </div>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 w-24 h-16 opacity-10 group-hover:opacity-20 transition-opacity">
+<img alt="Growth chart" data-alt="abstract green upward trending sparkline on transparent background with smooth vector curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX9vx_u4rKu-A3plqIOVndbZJkVCpwtZEmH9lYsettpkUKxOfdqtTajODAuQqT-RwgLVN_IK-7h4DOS4dxP9ndcemOvlYgz6uYJsaedS3y0SL3TsB9T1DPqQl3-6bXlVD_IjAuoNqakIbx_ChuS8237YGaIPHAAfA6na_h7k4G7rRV-8esg570aSZQ7bIRCbV4iWdx5nJHzkcEsvjxFQnuNv3Pp-qnrmHagP33LTuyCD7McwE15mcE4cbjemP_EAsdAK0_CB_T5H0"/>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
+<div class="relative z-10">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest font-label text-[0.6875rem] font-semibold mb-4">Active Proposals</p>
+<div class="flex items-end justify-between">
+<h3 class="text-5xl font-extrabold font-headline text-slate-900">12</h3>
+<div class="text-xs text-on-surface-variant font-medium">Pending Review: 3</div>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="description">description</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
+<div class="relative z-10">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest font-label text-[0.6875rem] font-semibold mb-4">Conversion Rate</p>
+<div class="flex items-end justify-between">
+<h3 class="text-5xl font-extrabold font-headline text-slate-900">85%</h3>
+<div class="flex items-center text-on-tertiary-container bg-tertiary-container/10 px-2 py-1 rounded text-xs font-semibold">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="expand_less">expand_less</span>
+                                +12%
+                            </div>
+</div>
+</div>
+<div class="mt-4 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-primary-container h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Recent Clients Table Section -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_rgba(15,23,42,0.04)] overflow-hidden">
+<div class="px-8 py-6 flex justify-between items-center bg-surface-container-low/30">
+<h3 class="text-lg font-bold font-headline text-slate-900">Recent Clients</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant">Name</th>
+<th class="px-8 py-4 font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant">Risk Profile</th>
+<th class="px-8 py-4 font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant">Status</th>
+<th class="px-8 py-4 font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant">Last Active</th>
+<th class="px-8 py-4 font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-xs">JD</div>
+<div>
+<p class="font-semibold text-slate-900 text-sm">Jonathan Dubois</p>
+<p class="text-xs text-on-surface-variant">jdubois@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="flex">
+<div class="w-1.5 h-4 bg-error rounded-full mr-0.5"></div>
+<div class="w-1.5 h-4 bg-error rounded-full mr-0.5"></div>
+<div class="w-1.5 h-4 bg-outline-variant/30 rounded-full"></div>
+</div>
+<span class="text-sm font-medium text-slate-700">Moderate-High</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-tertiary-container/10 text-on-tertiary-container">Active</span>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">2 hours ago</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-primary-container font-semibold text-sm hover:underline decoration-2 underline-offset-4">View</button>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">SW</div>
+<div>
+<p class="font-semibold text-slate-900 text-sm">Sarah Whitmore</p>
+<p class="text-xs text-on-surface-variant">swhit@capital.net</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="flex">
+<div class="w-1.5 h-4 bg-on-tertiary-container rounded-full mr-0.5"></div>
+<div class="w-1.5 h-4 bg-outline-variant/30 rounded-full mr-0.5"></div>
+<div class="w-1.5 h-4 bg-outline-variant/30 rounded-full"></div>
+</div>
+<span class="text-sm font-medium text-slate-700">Conservative</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-on-primary-container/10 text-on-primary-container">Proposal Sent</span>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Yesterday</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-primary-container font-semibold text-sm hover:underline decoration-2 underline-offset-4">View</button>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs">RK</div>
+<div>
+<p class="font-semibold text-slate-900 text-sm">Robert Kingsley</p>
+<p class="text-xs text-on-surface-variant">rk@estates.org</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="flex">
+<div class="w-1.5 h-4 bg-on-primary-container rounded-full mr-0.5"></div>
+<div class="w-1.5 h-4 bg-on-primary-container rounded-full mr-0.5"></div>
+<div class="w-1.5 h-4 bg-on-primary-container rounded-full"></div>
+</div>
+<span class="text-sm font-medium text-slate-700">Aggressive</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-surface-container-highest text-on-surface-variant">Onboarding</span>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-primary-container font-semibold text-sm hover:underline decoration-2 underline-offset-4">View</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 bg-surface-container-low/20 border-t border-outline-variant/10 text-center">
+<button class="text-xs font-bold font-label uppercase tracking-widest text-slate-500 hover:text-slate-900 transition-colors">See all 54 clients</button>
+</div>
+</div>
+<!-- Bottom Dashboard Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Market Context (Visual Accent) -->
+<div class="bg-wealth-gradient p-8 rounded-xl text-white relative overflow-hidden flex flex-col justify-between h-[240px]">
+<div class="relative z-10">
+<h4 class="text-xl font-bold font-headline mb-2">Market Outlook</h4>
+<p class="text-white/70 max-w-xs text-sm leading-relaxed">Global equities showing resilience. Recommended tactical rebalancing for Tier 1 client portfolios initiated.</p>
+</div>
+<div class="relative z-10 flex gap-4">
+<div class="bg-white/10 backdrop-blur-md p-3 rounded-lg flex-1">
+<p class="text-[10px] text-white/60 uppercase font-label">S&amp;P 500</p>
+<p class="font-bold text-lg">+1.24%</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-3 rounded-lg flex-1">
+<p class="text-[10px] text-white/60 uppercase font-label">Bonds 10Y</p>
+<p class="font-bold text-lg">4.12%</p>
+</div>
+</div>
+<!-- Abstract Background Graphic -->
+<div class="absolute right-[-20%] bottom-[-20%] w-64 h-64 bg-on-primary-container/20 rounded-full blur-3xl"></div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
+<h4 class="text-lg font-bold font-headline text-slate-900 mb-6">Recent Activity</h4>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-on-primary-container mt-1.5 shrink-0"></div>
+<div>
+<p class="text-sm font-semibold text-slate-900">Proposal Approved: <span class="font-normal text-on-surface-variant">The Sterling Trust rebalance has been finalized.</span></p>
+<p class="text-[10px] text-slate-400 mt-1 font-label">12 MINUTES AGO</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container mt-1.5 shrink-0"></div>
+<div>
+<p class="text-sm font-semibold text-slate-900">New Client Onboarded: <span class="font-normal text-on-surface-variant">Welcome Jonathan Dubois to the platform.</span></p>
+<p class="text-[10px] text-slate-400 mt-1 font-label">2 HOURS AGO</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-error mt-1.5 shrink-0"></div>
+<div>
+<p class="text-sm font-semibold text-slate-900">Task Overdue: <span class="font-normal text-on-surface-variant">Quarterly report for Whitmore Group is 2 days late.</span></p>
+<p class="text-[10px] text-slate-400 mt-1 font-label">OCT 25, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
